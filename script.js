@@ -26,6 +26,7 @@ function startGameFunc () {
 
             const gridCell = createCell();
             gameGrid.append(gridCell);
+            startButton.disabled = true;
             gridCell.addEventListener ('click', () => gridCell.classList.add('free-cell'));
         };
         gameGrid.className = 'small-grid';
@@ -35,6 +36,7 @@ function startGameFunc () {
         for (let i = 0; i < 81 ; i ++) {
             const gridCell = createCell();
             gameGrid.append(gridCell);
+            startButton.disabled = true;
             gridCell.addEventListener ('click', () => gridCell.classList.add('free-cell'));
 
         };
@@ -45,6 +47,7 @@ function startGameFunc () {
         for (let i = 0; i < 100 ; i ++) {
             const gridCell = createCell();
             gameGrid.append(gridCell);
+            startButton.disabled = true;
             gridCell.addEventListener ('click', () => gridCell.classList.add('free-cell'));
         };
         gameGrid.className = 'big-grid';
