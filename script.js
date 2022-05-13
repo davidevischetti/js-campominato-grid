@@ -4,11 +4,8 @@ let userLevel = document.getElementById('level').value;
 const startButton = document.getElementById('start');
 const gameGrid = document.getElementById('grid');
 
-startButton.addEventListener ('click', startGameFunc);
 //INIZIO A CREARE LA TABELLA DI GIOCO
-
-
-
+startButton.addEventListener ('click', startGameFunc);
 
 
 //USO UN EVENTO PER SELEZIONARE LE VARIE CELLE
@@ -23,24 +20,35 @@ function startGameFunc () {
 
     //USO UNA SERIE DI CICLI PER CREARE UAN GRIGLIA
     //A SECONDA DELLA DIFFICOLTA SCELTA DALL'UTENTE
+
     if (userLevel == 'easy') {
         for (let i = 0; i < 49; i ++) {
-            gameGrid.append(createCell());
+
+            const gridCell = createCell();
+            gameGrid.append(gridCell);
+            gridCell.addEventListener ('click', () => gridCell.classList.add('free-cell'));
         };
-        gameGrid.className = 'small-grid'
-        console.log('49');
+        gameGrid.className = 'small-grid';
+
     } else if (userLevel == 'medium') {
+
         for (let i = 0; i < 81 ; i ++) {
-            gameGrid.append(createCell());
-            console.log('81');
+            const gridCell = createCell();
+            gameGrid.append(gridCell);
+            gridCell.addEventListener ('click', () => gridCell.classList.add('free-cell'));
+
         };
-        gameGrid.className = 'medium-grid'
+        gameGrid.className = 'medium-grid';
+
     } else {
+
         for (let i = 0; i < 100 ; i ++) {
-            gameGrid.append(createCell());
+            const gridCell = createCell();
+            gameGrid.append(gridCell);
+            gridCell.addEventListener ('click', () => gridCell.classList.add('free-cell'));
         };
         gameGrid.className = 'big-grid';
-        console.log('100');
+
     };
 
 };
