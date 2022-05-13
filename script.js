@@ -1,0 +1,16 @@
+//CHIEDO ALL'UTENTE D SCEGLIERE UNA DIFFICOLTA'
+//E DI FAR INIZIARE IL GIOCO
+const userLevel = document.getElementById('level').value;
+
+const startButton = document.getElementById('start');
+
+startButton.addEventListener ('click', () => {
+
+});
+//INIZIO A CREARE LA TABELLA DI GIOCO
+    //USO UNA FUNZIONE CHE CREI GLI ELEMENTI CORRISPONDENTI ALLE CELLE DELLA GRIGLIA
+
+
+//USO UN CICLO PER APPLICARNE LE PROPRIETA A TUTTI
+
+//USO UN EVENTO PER SELEZIONARE LE VARIE CELLE
