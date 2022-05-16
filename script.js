@@ -1,57 +1,50 @@
-//CHIEDO ALL'UTENTE D SCEGLIERE UNA DIFFICOLTA'
-//E DI FAR INIZIARE IL GIOCO
+// VARIBILI PER RICHIAMARE LA SCELTA 
+// DELLA DIFFICOLTA' E IL BOTTONE DI AVVIO
 let userLevel = document.getElementById('level');
 const startButton = document.getElementById('start');
 const gameGrid = document.getElementById('grid');
 
-//INIZIO A CREARE LA TABELLA DI GIOCO
-//USO UN EVENTO PER SELEZIONARE LE VARIE CELLE
+// INIZIO A CREARE LA TABELLA DI GIOCO
+
+// EVENTO PER GENERARE LA GRIGLIA LL'AVVIO DEL GIOCO
 startButton.addEventListener ('click', startGameFunc);
 
-//USO UNA FUNZIONE CHE CREI GLI ELEMENTI CORRISPONDENTI ALLE CELLE DELLA GRIGLIA
+//FUNZIONE PER CREARE LA GRIGLIA ALL'INTERNO DELL'EVENTO CLICK DELL'AVVIO
 function startGameFunc () {
-
+    // VARIABILE PER RICHIAMARE IL VALORE DEI VARI LIVELLI DI DIFFICOLTA'
     const userChoseLevel = parseInt(userLevel.value);
 
-    const createCell = () => {
-        const node = document.createElement('div');
-        node.className = 'cell';
-        return node;
-    };
-
+    // SVUOTO LA GRIGLIA PRIMA DELL'INIZIO DI OGNI NUOVO CICLO
     gameGrid.innerHTML = '';
 
-    //USO UNA SERIE DI CICLI PER CREARE UAN GRIGLIA
-    //A SECONDA DELLA DIFFICOLTA SCELTA DALL'UTENTE
+    // SERIE DI CICLI PER CREARE LA GRIGLIA A SECONDA
+    // DELLA DIFFICOLTA SCELTA DALL'UTENTE
     if (userChoseLevel === 2) {
-        for (let i = 0; i < 49; i ++) {
-            cicleFunc();
-        };
-        gameGrid.className = 'small-grid';
-
+        cicleFunc(49, 'small-grid');
     } else if (userChoseLevel === 1) {
-
-        for (let i = 0; i < 81 ; i ++) {
-            cicleFunc();
-        };
-        gameGrid.className = 'medium-grid';
-
+        cicleFunc(81, 'medium-grid');
     } else {
-
-        for (let i = 0; i < 100 ; i ++) {
-            cicleFunc();
-        };
-        gameGrid.className = 'big-grid';
-
+        cicleFunc(100, 'big-grid');
     };
+};
 
-    //CREO UNA FUNZIONE PER OTTIMIZZARE I CICLI 
-    function cicleFunc () {
-        let gridCell = createCell();
+// FUNZIONE PER CREARE LE CELLE DELLA GRIGLIA
+function createCellFunc () {
+    const node = document.createElement('div');
+    node.className = 'cell';
+    return node;
+};
+
+// FUNZIONE PER OTTIMIZZARE I CICLI 
+function cicleFunc (numCells,typeCells) {
+    for (let i = 0; i < numCells; i ++) {
+        let gridCell = createCellFunc();
+        console.log(gridCell);
         gameGrid.append(gridCell);
         gridCell.addEventListener ('click', () => gridCell.classList.add('free-cell'));
-        return;
     };
+    gameGrid.className = typeCells;
 
+    return;
 };
 
