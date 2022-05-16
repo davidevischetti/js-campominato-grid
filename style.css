@@ -1,16 +1,11 @@
+/* STILE GENERALE  */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.cell {
-    height: 40px;
-    width: 40px;
-    margin: 1px;
-    border: 4px solid #999;
-}
-
+/* STILE HEADER */
 header {
     display: flex;
     flex-wrap: wrap;
@@ -18,16 +13,7 @@ header {
     align-items: center;
 }
 
-#logo {
-    height: 120px;
-}
-
-#grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 50px auto;
-}
-
+/* STILE NOME E LOGO */
 #title {
     width: 100%;
     margin-top: 10px;
@@ -36,12 +22,17 @@ header {
     align-items: center;
 }
 
+#logo {
+    height: 120px;
+}
+
 #name {
     display: inline-block;
     font-size: 50px;
     margin-top: 20px;
 }
 
+/* STILE SELEZIONE DIFICOLTA' */
 header label {
     width: 100%;
     text-align: center;
@@ -49,6 +40,15 @@ header label {
     font-size: 25px;
 }
 
+header select {
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #aaa;
+}
+
+/* STILE BUTTON AVVIO */
 #start {
     margin-left: 50px;
     height: 80px;
@@ -59,12 +59,19 @@ header label {
     color: #c00;
 }
 
-header select {
-    height: 30px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #aaa;
+/* STILE MAIN */
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+}
+
+/* STILE CLASSI JS */
+.cell {
+    height: 40px;
+    width: 40px;
+    margin: 1px;
+    border: 4px solid #999;
 }
 
 .small-grid {
