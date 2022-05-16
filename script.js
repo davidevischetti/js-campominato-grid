@@ -19,42 +19,39 @@ function startGameFunc () {
         return node;
     };
 
-    let gridCell = createCell();
-
     gameGrid.innerHTML = '';
 
     //USO UNA SERIE DI CICLI PER CREARE UAN GRIGLIA
     //A SECONDA DELLA DIFFICOLTA SCELTA DALL'UTENTE
     if (userChoseLevel === 2) {
         for (let i = 0; i < 49; i ++) {
-            gridCell.innerHTML = '';
-            gridCell = createCell();
-            gameGrid.append(gridCell);
-            gridCell.addEventListener ('click', () => gridCell.classList.add('free-cell'));
+            cicleFunc();
         };
         gameGrid.className = 'small-grid';
 
     } else if (userChoseLevel === 1) {
 
         for (let i = 0; i < 81 ; i ++) {
-            gridCell.innerHTML = '';
-            gridCell = createCell();
-            gameGrid.append(gridCell);
-            gridCell.addEventListener ('click', () => gridCell.classList.add('free-cell'));
-
+            cicleFunc();
         };
         gameGrid.className = 'medium-grid';
 
     } else {
 
         for (let i = 0; i < 100 ; i ++) {
-            gridCell.innerHTML = '';
-            gridCell = createCell();
-            gameGrid.append(gridCell);
-            gridCell.addEventListener ('click', () => gridCell.classList.add('free-cell'));
+            cicleFunc();
         };
         gameGrid.className = 'big-grid';
 
     };
 
+    //CREO UNA FUNZIONE PER OTTIMIZZARE I CICLI 
+    function cicleFunc () {
+        let gridCell = createCell();
+        gameGrid.append(gridCell);
+        gridCell.addEventListener ('click', () => gridCell.classList.add('free-cell'));
+        return;
+    };
+
 };
+
